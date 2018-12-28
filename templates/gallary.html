@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Gallary</title>
+</head>
+<body>
+
+<br>
+<h1> {{ session['username']  }}</h1>
+
+<form action="../download" method = "POST" enctype="multipart/form-data">
+
+    Select file to download, edit or delete: <select name="files">
+    {% for i in instagram %}
+        <option value="{{i.title}}">{{i.title}}</option>
+        {% endfor%}}
+    </select><br>
+
+    <input type="submit" name = "download" value = "Download Image" />
+    <input type="submit" name = "download" value = "Edit Image" />
+    <input type="submit" name = "download" value = "Delete Image" />
+</form>
+{% for i in instagram %}
+    <strong></strong><img src={{ i.image_url }} height="200px" width="200px"/><br>
+    <strong>Title:</strong> {{ i.title }} <br>
+    <strong>Rating:</strong> {{ i.ratings }} <br>
+    <strong>Comments:</strong> {{ i.comments }} <br>
+    <strong>Details:</strong> {{ i.date }} <br>
+{% endfor %}
+
+</body>
+</html>

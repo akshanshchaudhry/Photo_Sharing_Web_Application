@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+<br>
+
+<h1>Welcome {{ session['username'] }}</h1>
+<img src="/Users/akshanshchaudhry/PycharmProjects/Cloud_2/static/Images/ace.jpg">
+<form action="../post" method = "POST" enctype="multipart/form-data">
+  Choose file to upload: <input type = "file" name = "file" /><br>
+  Title of the image:    <input type = "text" name = "title" /><br>
+  Select the like value: <select name="ratings">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select><br>
+   <!--Comments:              <input type = "textarea" name = "comments" rows="3" /><br>-->
+    Comments: <textarea name="comments" cols="30" rows="2"></textarea><br>
+
+    <input type="submit" name = "click" value = "Upload Image" />
+
+
+</form >
+
+<form action="../upload" method = "POST" enctype="multipart/form-data">
+    <input type="submit" name = "click" value = "View Image" />
+</form>
+</body>
+</html>
